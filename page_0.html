@@ -8,17 +8,27 @@
                 .nav { margin-bottom: 20px; padding: 10px; background: #fff; border-radius: 5px; }
                 .content-box { background: #fff; border: 1px solid #ddd; margin-bottom: 30px; padding: 15px; border-radius: 5px; }
                 /* AA表示用の設定: フォントサイズと行間が重要 */
-                pre { 
-                    background: #fff; 
-                    color: #000; 
-                    padding: 10px; 
-                    overflow-x: auto; 
-                    white-space: pre; 
-                    font-family: "Textar","MS PGothic", "Mona", "IPAMonaPGothic", sans-serif; 
-                    font-size: 16px; 
-                    line-height: 1.1;
-                    border: 1px dashed #ccc;
-                }
+pre {
+    /* 1. AA用フォントの優先順位（これらが重要） */
+    font-family: "MS PGothic", "Mona", "IPAMonaPGothic", "IPA モナー Pゴシック", "Textar", sans-serif;
+    
+    /* 2. フォントサイズと行間の固定 */
+    font-size: 16px; 
+    line-height: 1.1; /* 行間が広いと縦に伸びて崩れます */
+    
+    /* 3. アンチエイリアスの無効化（Windowsでのズレ防止） */
+    -webkit-text-size-adjust: none;
+    
+    /* 4. レイアウト維持 */
+    white-space: pre;      /* 自動改行させない */
+    word-wrap: normal;
+    overflow-x: auto;      /* はみ出た場合は横スクロール */
+    
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
                 h2 { color: #333; border-bottom: 2px solid #333; }
                     
             </style>
